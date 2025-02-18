@@ -1,6 +1,6 @@
 from tethys_quotas.handlers.base import ResourceQuotaHandler
 from .model import Dam
-from .app import DamInventory as app
+from .app import App
 
 
 class DamQuotaHandler(ResourceQuotaHandler):
@@ -25,7 +25,7 @@ class DamQuotaHandler(ResourceQuotaHandler):
             Int: current number of dams in database
         """
         # Query database for count of dams
-        Session = app.get_persistent_store_database('primary_db', as_sessionmaker=True)
+        Session = App.get_persistent_store_database('primary_db', as_sessionmaker=True)
         session = Session()
         current_use = session.query(Dam).filter(Dam.user_id == self.entity.id).count()
 

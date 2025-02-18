@@ -1,13 +1,12 @@
-from tethys_sdk.base import TethysAppBase, url_map_maker
 from tethys_sdk.app_settings import CustomSetting, PersistentStoreDatabaseSetting
+from tethys_sdk.base import TethysAppBase
 from tethys_sdk.permissions import Permission, PermissionGroup
 
 
-class DamInventory(TethysAppBase):
+class App(TethysAppBase):
     """
     Tethys app class for Dam Inventory.
     """
-
     name = 'Dam Inventory'
     description = ''
     package = 'dam_inventory'  # WARNING: Do not change this value
